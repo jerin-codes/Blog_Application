@@ -1,0 +1,29 @@
+<div class="text-end px-5">
+    <button class="btn  bg-secondary mt-4 mb-2"><a routerLink="/addblog" class="text-white">Create New Blog</a></button>
+  </div>
+  
+<div class="maincontainer py-5 bg-light">
+    <div class="container col-sm-10 col-md-8 col-lg-6 mx-auto">
+      <h3 class="text-center mb-4 text-primary fw-bold">📝 Recent Blogs</h3>
+      @if (blogs.length === 0) {
+        <div class="alert alert-info text-center mt-4">
+          <h5>No blog posts available at the moment.</h5>
+          <p>We're working on bringing you fresh content. Please check back soon!</p>
+        </div>
+      }
+      
+      @for (item of blogs; track $index) {
+        <div class="card card-hover shadow-sm mb-4 border-0 rounded-4 bg-white">
+          <div class="card-body">
+            <h5 class="card-title text-dark fw-bold">{{ item.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">by {{ item.author }}</h6>
+            <p class="card-text text-secondary">
+              {{ item?.content | slice: 0:100 }}...
+              <a [routerLink]="['blogs', item.id]" class="text-decoration-none fw-semibold text-primary">Read more</a>
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  
