@@ -1,5 +1,5 @@
-#Blog application
-#Please follow the following steps for the successfull running of the crud angukar app
+
+# Please follow the following steps for the successfull running of the blog apliaction
 
 
 step 1: clone the project from github git clone https://github.com/hejfd/Angular_crud_app.git
